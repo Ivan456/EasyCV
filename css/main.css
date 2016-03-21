@@ -1,0 +1,135 @@
+body{
+	background-color: #D7E0E2;
+	min-width: 1000px;
+}
+
+header
+{
+	background-color: #EF6A6A;
+	color: 212,23,2 ;
+	text-align: center;
+	color: #fff;
+}
+
+nav 
+{
+	background-color: #DC5656;
+	display: inline-block;
+	width: 23%;
+	vertical-align: top;
+	margin-bottom: 10px;
+}
+
+
+
+article 
+{
+	display: inline-block;
+	width: 70%;
+}
+
+section 
+{
+	padding: 10px; 
+	display: inline-block;
+	background-color: #DBC7CF;
+	vertical-align: top;
+	margin-bottom: 10px;
+  
+}
+
+div {
+	background-color: #DBadCF;
+	display: inline-block;
+}
+
+canvas {
+	display: none;
+}
+
+#opener 
+{
+	display: inline-block;
+	background: #EECDCD;
+}
+
+#menu ul
+{
+	margin-left: -1000px;
+} 
+ 
+ #menu ul li
+{
+	display: inline-block;
+} 
+
+#menu li:hover + ul, #menu ul:hover
+{
+	margin-left: 0px;
+	padding-top: 10px;
+	margin-top: -10px;
+} 
+
+
+
+#images 
+{
+	position: relative;
+	width: 250;
+	height: 350;
+}
+ 
+#images:hover {
+	background: #CCD5DB;
+}
+
+aside
+{
+	display: inline-block;
+}
+
+footer
+{
+	background-color:#A66262;
+}
+
+ul
+{
+	list-style-type: none;
+	padding: 0;
+}
+
+li
+{
+	margin: 10px;
+	padding: 10px;
+	background-color: gray;
+	list-style-type: none;
+}
+
+li button {
+	display: inline-block;
+	float: right;
+}
+
+input[type=text] {
+	margin:10px;
+	background-color: #D15656;
+}
+
+input[type=button] {
+	margin:10px;
+	color: #fff; /* цвет текста */
+	text-decoration: none; /* убирать подчёркивание у ссылок */
+	user-select: none; /* убирать выделение текста */
+	background: rgb(212,75,56); /* фон кнопки */
+	padding: 10px; /* отступ от текста */
+	outline: none; /* убирать контур в Mozilla */
+	cursor:pointer;
+	border:none;
+} 
+input[type=button]:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+input[type=button]:active { background: rgb(152,15,0); } /* при нажатии */
+
+
+
