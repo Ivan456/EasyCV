@@ -1,7 +1,8 @@
 body{
-	background-color: rgb(244,244,232);
+	background-color: rgb(204,210,220);
 	min-width: 960px;
 	text-align: center;
+	font-size: 24px;
 }
 
 header
@@ -12,6 +13,18 @@ header
 	color: white;
 }
 
+article 
+{
+	width: 960px;
+	background-color: rgb(244,244,232);
+	display: inline-block;
+}
+
+article p {
+	background-color: rgb(240,240,250);
+	color: rgb(0,0,0);
+}
+
 section 
 {
 	width: 960px;
@@ -19,3 +32,5 @@ section
 	display: inline-block;
 	background-color: rgb(68,120,168); 
 }
+
+

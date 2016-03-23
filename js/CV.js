@@ -1,6 +1,5 @@
 function CV() {
-	this.name = "name";
-	this.profession = "profession";
+	this.name = "name and proffesion";
 	this.generalInformation = "generalInformation: age, home, telephone, email";
 	this.education = "education: colegue, university";
 	this.wantedProfession = "  wanted profession";
