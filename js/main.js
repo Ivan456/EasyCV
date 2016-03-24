@@ -1,8 +1,12 @@
 (function () {
 	var newPerson = new CV();
-	var nameBlock = document.createElement("section");
-	nameBlock.innerText = newPerson.name;
-	nameBlock.innerHTML = nameBlock.innerHTML + "<p>Ivan Vodich</p>";
-	var place = document.getElementById("article");
-	place.appendChild(nameBlock);
+	newPerson.addFreeBlock("name","photo");
+	newPerson.addTitleLine("general information","education");
+	newPerson.addFreeBlock("generalInformation","education");
+	newPerson.addTitleLine("wanted profession","expirience");
+	newPerson.addFreeBlock("wantedProfession","expirience");
+	newPerson.addTitleLine("main skills","additional skills");
+	newPerson.addFreeBlock("mainSkills","additionalSkills");
+	newPerson.addTitleLine(" ","about myself");
+	newPerson.addFreeBlock(" ","aboutMyself");
 })();
