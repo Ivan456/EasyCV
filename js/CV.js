@@ -38,3 +38,15 @@ CV.prototype.addStructuredBlock = function () {
 	var place = document.getElementById("article");
 	place.appendChild();
 };
+
+CV.prototype.savePDF = function(){
+	var objForHtml2canvas = {
+		onrendered: function (canvas) {
+			var img = canvas.toDataURL("image/png");
+			var doc = new jsPDF();
+			doc.addImage(img, 'JPEG', 0, 0);
+			doc.save('test.pdf'); 
+		}
+	};
+	html2canvas(document.getElementById("CV"), objForHtml2canvas);
+};

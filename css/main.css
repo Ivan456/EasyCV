@@ -2,17 +2,31 @@ body{
 	background-color: rgb(204,210,220);
 	min-width: 960px;
 	text-align: center;
-	font-size: 24px;
 	font-family: 'Abel', sans-serif;
 }
 
-header, nav
+header
 {
 	color: white;
-	font-size: 40px;
+	font-size: 30px;
 	display: inline-block;
 	padding-left: 40px;
 }
+
+input[type=button] {
+	margin:10px;
+	color: #fff; /* цвет текста */
+	text-decoration: none; /* убирать подчёркивание у ссылок */
+	user-select: none; /* убирать выделение текста */
+	background: rgb(212,75,56); /* фон кнопки */
+	padding: 10px; /* отступ от текста */
+	outline: none; /* убирать контур в Mozilla */
+	cursor:pointer;
+	border:none;
+} 
+input[type=button]:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+input[type=button]:active { background: rgb(152,15,0); } /* при нажатии */
+
 
 table 
 {
@@ -22,38 +36,46 @@ table
 	border-top: 20px;
 	border-style: solid;
 	border-color: rgb(68,120,168);
-	width: 960px;
+	width: 800px;
 	background-color: rgb(244,244,232);
 	display: inline-block;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+
+#name {
+	font-size: 40px;
+}
+
 .table__title-line {
+	border: 0px;
+	border-top: 1px;
+	border-bottom: 1px;	
+	border-style: solid;
+	border-color: rgb(244,244,232);
 	background-color: rgb(68,120,168);
 	color: white;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	font-size: 25px;
+	font-size: 18px;
 	font-family: arial;
 	display: inline-block;
-	padding:  10px;
+	padding:  7px;
 }
 
 .table__information-block {
+	font-size: 16px;
 	display: inline-block;
 	padding: 40px;
 }
 
 th {
-	width: 480px;
+	width: 400px;
 }
 
 footer {
 	color: white;
 }
 
-#name {
-	font-size: 70px;
-}
 
 
 
