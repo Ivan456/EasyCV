@@ -13,6 +13,15 @@ header
 	padding-left: 40px;
 }
 
+nav {
+	background-color: rgb(68,120,168);
+	height:60px;
+	position: fixed;
+	display: block;
+	width: 100%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+} 
+
 input[type=button] {
 	margin:10px;
 	color: #fff; /* цвет текста */
@@ -30,6 +39,7 @@ input[type=button]:active { background: rgb(152,15,0); } /* при нажати�
 
 table 
 {
+	margin-top: 70pt;
 	color: rgb(0,0,0);
 	border: 0px;
 	border-bottom: 5px;
@@ -42,6 +52,9 @@ table
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+th {
+	width: 400px;
+}
 
 #name {
 	font-size: 40px;
@@ -68,9 +81,6 @@ table
 	padding: 40px;
 }
 
-th {
-	width: 400px;
-}
 
 footer {
 	color: white;
