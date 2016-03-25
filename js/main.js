@@ -15,10 +15,16 @@
 		b = Math.round(255*Math.random());
 		document.getElementById("CV").style.background = "rgb("+r+","+g+","+b+")";
 	};
+
+	function hideMenu() {
+		document.getElementById("menu").style.display = "none";
+		document.getElementById("CV").style.marginTop = "20px";
+	};
 	
 	var newPerson = new CV();
 	addButton("menu","save as .PDF", newPerson.savePDF);
 	addButton("menu","change color", changeColor);
+	addButton("menu","hide menu", hideMenu);
 	newPerson.addFreeBlock("name","photo");
 	newPerson.addTitleLine("general information","education");
 	newPerson.addFreeBlock("generalInformation","education");
