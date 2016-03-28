@@ -32,7 +32,7 @@
 	newPerson.addFreeBlock("wantedProfession","expirience");
 	newPerson.addTitleLine("main skills","additional skills");
 	newPerson.addFreeBlock("mainSkills","additionalSkills");
-	newPerson.addTitleLine(" ","about myself");
-	newPerson.addFreeBlock(" ","aboutMyself");
+	newPerson.addTitleLine("languages","about myself");
+	newPerson.addFreeBlock("languages","aboutMyself");
 	newPerson.toPDF();
 })();

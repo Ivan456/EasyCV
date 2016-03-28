@@ -56,6 +56,17 @@ th {
 	width: 400px;
 }
 
+input {
+	width: auto;
+	margin:10px;
+	color: black; /* цвет текста */
+	background: none; /* фон кнопки */
+	padding: 10px; /* отступ от текста */
+	outline: none; /* убирать контур в Mozilla */
+	cursor:pointer;
+	border:none;
+}
+
 #name {
 	font-size: 40px;
 }
