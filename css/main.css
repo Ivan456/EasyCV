@@ -2,7 +2,7 @@ body{
 	background-color: rgb(204,210,220);
 	min-width: 960px;
 	text-align: center;
-	font-family: 'Abel', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 header
@@ -27,13 +27,18 @@ input[type=button] {
 	color: #fff; /* цвет текста */
 	text-decoration: none; /* убирать подчёркивание у ссылок */
 	user-select: none; /* убирать выделение текста */
-	background: rgb(212,75,56); /* фон кнопки */
-	padding: 10px; /* отступ от текста */
-	outline: none; /* убирать контур в Mozilla */
+	background: none; /* фон кнопки */
+	padding: 9px; /* отступ от текста */
 	cursor:pointer;
-	border:none;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	border-radius: 15px;
 } 
-input[type=button]:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+input[type=button]:hover { 
+	background: rgb(232,95,76); 
+	border-color: transparent;
+} /* при наведении курсора мышки */
 input[type=button]:active { background: rgb(152,15,0); } /* при нажатии */
 
 
@@ -46,6 +51,7 @@ table
 	border-top: 20px;
 	border-style: solid;
 	border-color: rgb(68,120,168);
+	border-radius: 10px;
 	width: 800px;
 	background-color: rgb(244,244,232);
 	display: inline-block;
@@ -68,7 +74,7 @@ input {
 }
 
 #name {
-	font-size: 40px;
+	font-size: 35px;
 }
 
 .table__title-line {

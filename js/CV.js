@@ -15,8 +15,8 @@ CV.prototype.addFreeBlock = function (firstName, secondName) {
 	var newBlock = document.createElement("tr");
 	newBlock.id = firstName;
 	newBlock.className = "table__information-block"
-	newBlock.innerHTML += "<th contentEditable=true>" + this[firstName] + "</th>"
-	newBlock.innerHTML += "<th contentEditable=true>" + this[secondName] + "</th>";
+	newBlock.innerHTML += "<th>" + this[firstName] + "</th>"
+	newBlock.innerHTML += "<th>" + this[secondName] + "</th>";
 	var place = document.getElementById("CV");
 	place.appendChild(newBlock);
 };
@@ -25,8 +25,8 @@ CV.prototype.addTitleLine = function (firstName, secondName) {
 	var newBlock = document.createElement("tr");
 	newBlock.id = firstName;
 	newBlock.className = "table__title-line";
-	newBlock.innerHTML += "<th contentEditable=true>" + firstName + "</th>"
-	newBlock.innerHTML += "<th contentEditable=true>" + secondName + "</th>";
+	newBlock.innerHTML += "<th>" + firstName + "</th>"
+	newBlock.innerHTML += "<th>" + secondName + "</th>";
 	var place = document.getElementById("CV");
 	place.appendChild(newBlock);
 };
