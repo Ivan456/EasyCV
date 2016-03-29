@@ -41,6 +41,13 @@
 		CV.prototype.addTitleLine(); 
 		CV.prototype.addFreeBlock();
 	};
+
+	function deleteField() {
+		var tdMassive = document.getElementsByTagName("tr");
+		var massiveLength = tdMassive.length;
+		document.getElementById("CV").removeChild(tdMassive[massiveLength - 1]);
+		document.getElementById("CV").removeChild(tdMassive[massiveLength - 2]);
+	};
 	
 	var newPerson = new CV();
 	addButton("menu","save as .PDF", newPerson.savePDF);
@@ -49,6 +56,7 @@
 	addButton("menu","edit CV", editContent);
 	addButton("menu","apply CV", applyContent);
 	addButton("menu","add field", addField);
+	addButton("menu","delete field", deleteField);
 	newPerson.addFreeBlock("name","photo");
 	newPerson.addTitleLine("general information","education");
 	newPerson.addFreeBlock("generalInformation","education");
