@@ -45,7 +45,7 @@ input[type=button]:active { background: rgb(152,15,0); } /* при нажати�
 
 table 
 {
-	margin-top: 70pt;
+	margin-top: 70px;
 	color: rgb(0,0,0);
 	border: 0px;
 	border-bottom: 5px;
@@ -103,7 +103,3 @@ input {
 footer {
 	color: white;
 }
-
-
-
-
