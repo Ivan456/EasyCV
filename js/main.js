@@ -1,4 +1,15 @@
 (function () {
+	
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("menu").style.marginTop = "-43px";
+    } else {
+        document.getElementById("menu").style.marginTop = "0px";
+    };
+};
 	var newPerson = new CV();
 	newPerson.addButton("save as .PDF", newPerson.savePDF);
 	newPerson.addButton("change color", newPerson.changeColor);

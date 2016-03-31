@@ -10,10 +10,8 @@ var fs = require("fs");
 
 console.log("Starting web server at " + serverUrl + ":" + port);
 
-http.createServer( function(req, res) {
-
+http.createServer(function(req, res) {
 	var now = new Date();
-
 	var filename = req.url || "index.html";
 	var ext = path.extname(filename);
 	var localPath = __dirname;
@@ -25,26 +23,24 @@ http.createServer( function(req, res) {
 		".jpg": "image/jpeg",
 		".gif": "image/gif",
 		".png": "image/png"
-	};
+};
 	var isValidExt = validExtensions[ext];
 
 	if (isValidExt) {
-		
 		localPath += filename;
 		fs.exists(localPath, function(exists) {
 			if(exists) {
 				console.log("Serving file: " + localPath);
-				getFile(localPath, res, ext);
+				getFile(localPath, res, validExtensions[ext]);
 			} else {
 				console.log("File not found: " + localPath);
 				res.writeHead(404);
 				res.end();
-			}
+			};
 		});
-
 	} else {
-		console.log("Invalid file extension detected: " + ext)
-	}
+		console.log("Invalid file extension detected: " + ext);
+	};
 }).listen(port, serverUrl);
 
 function getFile(localPath, res, mimeType) {
@@ -57,6 +53,6 @@ function getFile(localPath, res, mimeType) {
 		} else {
 			res.writeHead(500);
 			res.end();
-		}
+		};
 	});
-}
+};
