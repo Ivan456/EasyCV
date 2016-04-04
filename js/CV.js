@@ -69,7 +69,7 @@ CV.prototype.applyContent = function(){
 
 CV.prototype.addField = function(){
 	CV.prototype.addTitleLine(); 
-	CV.prototype.addFreeBlock();
+	CV.prototype.addInformationBlock();
 };
 
 CV.prototype.deleteField = function(){

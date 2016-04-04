@@ -1,5 +1,6 @@
 (function () {
 	
+	//var cv = require("CV.js");
 
 window.onscroll = function() {myFunction()};
 
@@ -10,6 +11,7 @@ function myFunction() {
         document.getElementById("menu").style.marginTop = "0px";
     };
 };
+
 	var newPerson = new CV();
 	newPerson.addButton("save as .PDF", newPerson.savePDF);
 	newPerson.addButton("change color", newPerson.changeColor);
