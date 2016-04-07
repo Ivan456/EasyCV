@@ -90,13 +90,13 @@ CV.prototype.addButton = function(text, funcOnClick){
 
 
 CV.prototype.showMenu = function(){
-	document.getElementById("menu").style.display = "block";
+	document.getElementById("menu").style.marginTop = "0px";
 	document.getElementById("CV").style.marginTop = "70px";
-	document.getElementById("menu").onclick = null;
+	document.getElementById("CV").onclick = null;
 };
 
 CV.prototype.hideMenu = function(){
-	document.getElementById("menu").style.display = "none";
+	document.getElementById("menu").style.marginTop = "-100px";
 	document.getElementById("CV").style.marginTop = "20px";
 	document.getElementById("CV").onclick = CV.prototype.showMenu;
 };

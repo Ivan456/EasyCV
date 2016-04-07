@@ -1,10 +1,15 @@
 body{
-	background-color: rgb(204,210,220);
+	background:  #E0EAF5; 
 	min-width: 960px;
 	text-align: center;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
+
+* {
+	transition-property: all;
+  	transition-duration: 0.5s;
+  }
 
 header
 {
@@ -18,9 +23,11 @@ nav {
 	background-color: rgb(68,120,168);
 	height:60px;
 	position: fixed;
-	display: block;
-	width: 100%;
+	width: 64%;
+	margin-left: 18%;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 15px;
+	margin-top: 100px;
 } 
 
 input[type=button] {
