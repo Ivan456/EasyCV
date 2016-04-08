@@ -19,11 +19,12 @@ http.createServer(function(req, res) {
 		".html" : "text/html",			
 		".js": "application/javascript", 
 		".css": "text/css",
+		".ttf": "application/font",
 		".txt": "text/plain",
 		".jpg": "image/jpeg",
 		".gif": "image/gif",
 		".png": "image/png"
-};
+	};
 	var isValidExt = validExtensions[ext];
 
 	if (isValidExt) {
