@@ -1,6 +1,6 @@
-(function () {
+//(function () {
 
-	var xmlhttp = new XMLHttpRequest();
+	/*var xmlhttp = new XMLHttpRequest();
 	var url = "";
 	var text = "sfsdf";
 
@@ -10,23 +10,13 @@
 	    }
 	};
 	xmlhttp.open("GET", url, true);
-	xmlhttp.send(text);
+	xmlhttp.send(text);*/
 
 
-	var newPerson = new CV();
-	addButton("save", savePDF);
-	addButton("color", changeColor);
-	addButton("hide", hideMenu);
-	addButton("edit", editContent);
-	addButton("add", addField);
-	addButton("delete", deleteField);
-	addInformationBlock(newPerson.name, newPerson.photo);
-	addTitleLine("general information","education");
-	addInformationBlock(newPerson.generalInformation, newPerson.education);
-	addTitleLine("wanted profession","expirience");
-	addInformationBlock(newPerson.wantedProfession, newPerson.expirience);
-	addTitleLine("main skills","additional skills");
-	addInformationBlock(newPerson.mainSkills, newPerson.additionalSkills);
-	addTitleLine("languages","about myself");
-	addInformationBlock(newPerson.languages, newPerson.aboutMyself);
-})();
+	var newTableCV = new TableCV("CV");
+	newTableCV.initialization();
+
+	var newMenuCV = new MenuCV("menu", newTableCV);
+	newMenuCV.initialization();
+	
+//})();

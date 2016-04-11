@@ -1,4 +1,5 @@
-document.getElementById("menu").style.marginTop = "0px";
+(function (){
+	document.getElementById("menu").style.marginTop = "0px";
 	window.onscroll = function() {myFunction()};
 	function myFunction() {
 	    if (parseInt(document.getElementById("menu").style.marginTop) >= -100 ) {
@@ -9,3 +10,4 @@ document.getElementById("menu").style.marginTop = "0px";
 	    	};
 	    };
 	};
+})();
