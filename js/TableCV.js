@@ -9,7 +9,7 @@ function TableCV(id) {
 	this.mainSkills = "JS(Ecma Script 5.0), HTML 5, CSS 3, <br> JQuery, Angular, Adobe Photoshop, Adope Illustrator";
 	this.additionalSkills = "Java SE, SQL, C++";
 	this.languages = "English Intermediate"; 
-	this.aboutMyself = "желание постоянно развиваться в своей сфере деятельности, принимать участие в сложных проектах, работа в большой команде";
+	this.aboutMyself = "желание постоянно развиваться во front-end разработке, принимать участие в сложных проектах, работать в большой команде";
 };
 
 TableCV.prototype.addInformationBlock = function (firstBlock, secondBlock) {

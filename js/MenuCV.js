@@ -66,7 +66,7 @@ MenuCV.prototype.applyContent = function(){
 };
 
 MenuCV.prototype.addField = function(){
-	TableCV.prototype.addTitleLine.apply(this.newTableCV, ["input text", "input text"]); 
+	TableCV.prototype.addTitleLine.apply(newTableCV, ["input text", "input text"]); 
 	TableCV.prototype.addInformationBlock.apply(newTableCV, ["input text", "input text"]);
 };
 
