@@ -26,14 +26,14 @@ http.createServer(function(req, res) {
 	var validExtensions = {
 		".html" : "text/html",			
 		".css": "text/css",
+		".json": "application/json",
 		".js": "application/javascript", 
 		".ttf": "font/ttf",
 		".txt": "text/plain",
 		".jpg": "image/jpeg",
 		".gif": "image/gif",
 		".png": "image/png",
-		".ico" : "image/ico",
-		".json": "text/json"
+		".ico" : "image/ico"
 	};
 	var isValidExt = validExtensions[ext];
 	console.log("......isValidExt = validExtensions[ext] = " + validExtensions[ext]);

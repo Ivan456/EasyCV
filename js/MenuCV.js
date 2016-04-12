@@ -66,8 +66,9 @@ MenuCV.prototype.applyContent = function(){
 };
 
 MenuCV.prototype.addField = function(){
-	TableCV.prototype.addTitleLine.apply(newTableCV, ["input text", "input text"]); 
-	TableCV.prototype.addInformationBlock.apply(newTableCV, ["input text", "input text"]);
+    this.newTableCV.addTitleLine("general information","education");
+	this.newTableCV.addTitleLine("input text", "input text"); 
+	this.newTableCV.addInformationBlock("input text", "input text");
 };
 
 MenuCV.prototype.deleteField = function(){
