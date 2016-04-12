@@ -1,6 +1,6 @@
 {
      "name" : "Водич Иван Юрьевич <br> Front End Developer",
-     "photo" : "photo",
+     "photo" : "<img src='data/vodich.jpg'/>",
      "generalInformation" : "др:     05.05.94 <br>  место проживания:     г. Минск, ул. Октябрьская 10 <br> тел.:     8 029 800 63 28 <br> email:     Ivan.Vodich.l@gmail.com",
      "education" : "БГУ ФПМИ 4 курс",
      "wantedProfession" : "Front End Developer <br> JS Developer",

@@ -84,17 +84,6 @@ th {
 	width: 400px;
 }
 
-input {
-	width: auto;
-	margin:10px;
-	color: black; /* цвет текста */
-	background: none; /* фон кнопки */
-	padding: 10px; /* отступ от текста */
-	outline: none; /* убирать контур в Mozilla */
-	cursor:pointer;
-	border:none;
-}
-
 .table__title-line {
 	border: 0px;
 	border-top: 1px;
@@ -113,12 +102,13 @@ input {
 .table__information-block {
 	font-size: 16px;
 	display: inline-block;
-	padding: 40px;
+	padding: 20px;
 }
 
 
-tr:first-child {
+tr:first-child{
 	font-size: 35px;
+	padding: 0px;
 }
 
 footer {

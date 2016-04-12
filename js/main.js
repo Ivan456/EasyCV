@@ -12,6 +12,7 @@
 	xmlhttp.open("GET", url, false);
 	xmlhttp.send();
 
+
 	var newTableCV = new TableCV("CV", objExampleCV);
 	newTableCV.initialization();
 
