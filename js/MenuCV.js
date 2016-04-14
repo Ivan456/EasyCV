@@ -10,6 +10,8 @@ MenuCV.prototype.initialization = function(){
 	this.addButton("edit", this.editContent);
 	this.addButton("add", this.addField);
 	this.addButton("delete", this.deleteField);  
+	this.addButton("logIn", this.logIn);  
+	this.addButton("registration", this.registration);	
 };
 
 
@@ -88,4 +90,29 @@ MenuCV.prototype.hideMenu = function(){
 	document.getElementById("menu").style.marginTop = "-200px";
 	document.getElementById("CV").style.marginTop = "10px";
 	document.getElementById("CV").onclick = MenuCV.prototype.showMenu;
+};
+
+MenuCV.prototype.registration = function(){
+	MenuCV.prototype.createWindow();
+};
+
+MenuCV.prototype.logIn = function(){
+	var logInButton = document.getElementById("logIn");
+	logInButton.value = "logOut";
+	logInButton.onclick = MenuCV.prototype.logOut;
+	MenuCV.prototype.createWindow();
+};
+
+MenuCV.prototype.logOut = function(){
+	var logInButton = document.getElementById("logIn");
+	logInButton.value = "logIn";
+	logInButton.onclick = MenuCV.prototype.logIn;
+};
+
+MenuCV.prototype.createWindow = function(){
+	var newWindow = document.createElement("object");
+	newWindow.type = "text/html";
+	newWindow.data="logIn.html";
+	newWindow.className = 'body__registration-window';
+	document.body.appendChild(newWindow);
 };

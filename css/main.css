@@ -30,6 +30,11 @@ header
 	font-family: 'headerFont';
 } 
 
+header:hover {
+	text-shadow: 0 7px 17px rgba(68,120,168,0.8);
+	font-size: 55px;
+}
+
 nav {
 	background-color: rgb(68,120,168);
 	height:60px;
@@ -42,7 +47,7 @@ nav {
 	width: 850px;
 } 
 
-input[type=button] {
+input[type=button], input[type=submit] {
 	min-width: 70px;
 	margin:10px;
 	color: #fff; 
@@ -57,12 +62,22 @@ input[type=button] {
 	border-color: white;
 	border-radius: 15px;
 } 
-input[type=button]:hover { 
+input[type=button]:hover, input[type=submit]:hover { 
 	background: #C9D6F4; 
 	border-color: transparent;
-} 
-input[type=button]:active { background: #267EC9; } /* при нажатии */
+	box-shadow: 0 7px 17px rgba(0,0,0,0.5);
 
+} 
+input[type=button]:active, input[type=submit]:active  { background: #267EC9; } /* при нажатии */
+
+object {
+	height: 200px;
+}
+
+fieldset {
+	border: none;
+	background: #729DE3;
+}
 
 table 
 {
@@ -82,6 +97,12 @@ table
 
 th {
 	width: 400px;
+}
+
+img {
+	margin-bottom: -20px;
+	margin-top: -1px;
+
 }
 
 .table__title-line {
@@ -105,8 +126,17 @@ th {
 	padding: 20px;
 }
 
+.body__registration-window {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 18px 60px rgba(0,30,80,0.7);
+}
 
-tr:first-child{
+
+tr:first-child {
 	font-size: 35px;
 	padding: 0px;
 }
