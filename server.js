@@ -52,6 +52,9 @@ http.createServer(function(req, res) {
 	} else {
 		console.log("Invalid file extension detected: " + ext);
 	};
+
+	//Note that in version 4 of express, express.bodyParser() was
+
 }).listen(port, serverUrl);
 
 function getFile(localPath, res, mimeType) {
@@ -69,3 +72,59 @@ function getFile(localPath, res, mimeType) {
 		};
 	});
 };
+
+	
+
+var express = require('express');
+var bodyParser = require('body-parser');
+var app   = express();
+
+
+	//deprecated in favor of a separate 'body-parser' module.
+	app.use(bodyParser.urlencoded({ extended: true })); 
+
+	//app.use(express.bodyParser());
+
+	app.post('/myaction', function(req, res) {
+  	res.send('You sent the name "' + req.body.name + '".');
+	});
+	
+	app.listen(8080, function() {
+ 	console.log('Server running at http://127.0.0.1:8080/');
+});
+
+
+
+var mysql = require("mysql");
+
+// First you need to create a connection to the db
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "1010011010",
+  database: "vodichdb"
+});
+
+con.connect(function(err){
+  if(err){
+    console.log('Error connecting to Db');
+    return;
+  }
+  console.log('Connection established');
+});
+
+con.query('SELECT * FROM vodichcv',function(err,rows){
+  if(err){
+    console.log('Error connecting to Db');
+    return;
+  };
+
+  console.log('Data received from Db:\n');
+  console.log(rows);
+});
+
+con.end(function(err) {
+  // The connection is terminated gracefully
+  // Ensures all previously enqueued queries are still
+  // before sending a COM_QUIT packet to the MySQL server.
+});
