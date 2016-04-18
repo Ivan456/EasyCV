@@ -93,26 +93,18 @@ MenuCV.prototype.hideMenu = function(){
 };
 
 MenuCV.prototype.registration = function(){
-	MenuCV.prototype.createWindow();
+	var registrationForm = document.getElementById("registrationForm");
+	registrationForm.style.left = "50%";
 };
 
 MenuCV.prototype.logIn = function(){
 	var logInButton = document.getElementById("logIn");
 	logInButton.value = "logOut";
 	logInButton.onclick = MenuCV.prototype.logOut;
-	MenuCV.prototype.createWindow();
 };
 
 MenuCV.prototype.logOut = function(){
 	var logInButton = document.getElementById("logIn");
 	logInButton.value = "logIn";
 	logInButton.onclick = MenuCV.prototype.logIn;
-};
-
-MenuCV.prototype.createWindow = function(){
-	var newWindow = document.createElement("object");
-	newWindow.type = "text/html";
-	newWindow.data="logIn.html";
-	newWindow.className = 'body__registration-window';
-	document.body.appendChild(newWindow);
 };

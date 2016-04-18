@@ -70,14 +70,6 @@ input[type=button]:hover, input[type=submit]:hover {
 } 
 input[type=button]:active, input[type=submit]:active  { background: #267EC9; } /* при нажатии */
 
-object {
-	height: 200px;
-}
-
-fieldset {
-	border: none;
-	background: #729DE3;
-}
 
 table 
 {
@@ -126,19 +118,30 @@ img {
 	padding: 20px;
 }
 
-.body__registration-window {
-	display: block;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	box-shadow: 0 18px 60px rgba(0,30,80,0.7);
-}
-
-
 tr:first-child {
 	font-size: 35px;
 	padding: 0px;
+}
+
+.body__registration-form {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 150%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 15px 40px rgba(0,10,20,0.6);
+	background: #729DE3;
+	border:0px;
+	border-bottom: 5px;
+	border-top: 5px;
+	border-style: solid;
+	border-color: rgb(68,120,168);
+	border-radius: 10px;
+}
+
+fieldset {
+	border: none;
+	background: #729DE3;
 }
 
 footer {

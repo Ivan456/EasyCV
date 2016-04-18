@@ -17,7 +17,7 @@ http.createServer(function(req, res) {
 		console.log('.....change req.url to "/index.html"');
 		filename = "/index.html";
 	};
-	console.log("......file name:  " + req.url);
+	console.log("......file name:	" + req.url);
 	var ext = path.extname(filename);
 	console.log("......extname = " + ext);
 	var localPath = __dirname;
@@ -73,58 +73,58 @@ function getFile(localPath, res, mimeType) {
 	});
 };
 
-	
-
 var express = require('express');
 var bodyParser = require('body-parser');
-var app   = express();
-
-
-	//deprecated in favor of a separate 'body-parser' module.
-	app.use(bodyParser.urlencoded({ extended: true })); 
-
-	//app.use(express.bodyParser());
-
-	app.post('/myaction', function(req, res) {
-  	res.send('You sent the name "' + req.body.name + '".');
-	});
-	
-	app.listen(8080, function() {
- 	console.log('Server running at http://127.0.0.1:8080/');
-});
-
-
-
+var app	 = express();
 var mysql = require("mysql");
 
-// First you need to create a connection to the db
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "1010011010",
-  database: "vodichdb"
+app.post('/myaction', function(req, res) {
+	res.send('You sent the name "' +  req + '".');
+	// First you need to create a connection to the db
+	
+	var con = mysql.createConnection({
+		host: "localhost",
+		user: "root",
+		password: "1010011010",
+		database: "vodichdb"
+	});
+
+	con.connect(function(err){
+	if(err){
+		console.log('Error connecting to Db');
+		return;
+	};
+	console.log('Connection established');
+	});
+		
+	console.log('email = ' + req);
+
+	con.query('SELECT password FROM vodichcv WHERE mail = "' + req.body.email + '"',function(err,rows){
+		if(err){
+			console.log('Error connecting to Db');
+			return;
+		};
+		console.log(req.body.name);
+		console.log('Data received from Db:\n');
+		console.log(rows[0].password);
+		console.log(confirmPassword(req.body.password, rows[0].password));
+	});
+
+	con.end(function(err) {
+		// The connection is terminated gracefully
+		// Ensures all previously enqueued queries are still
+		// before sending a COM_QUIT packet to the MySQL server.
+	});
 });
 
-con.connect(function(err){
-  if(err){
-    console.log('Error connecting to Db');
-    return;
-  }
-  console.log('Connection established');
-});
-
-con.query('SELECT * FROM vodichcv',function(err,rows){
-  if(err){
-    console.log('Error connecting to Db');
-    return;
-  };
-
-  console.log('Data received from Db:\n');
-  console.log(rows);
-});
-
-con.end(function(err) {
-  // The connection is terminated gracefully
-  // Ensures all previously enqueued queries are still
-  // before sending a COM_QUIT packet to the MySQL server.
+function confirmPassword(formPassword, dbPassword) {
+	if(formPassword == dbPassword) {
+		return true;
+	} else {
+		return false;
+	}
+};
+	
+app.listen(8080, function() {
+	console.log('Server running at http://127.0.0.1:8080/');
 });
