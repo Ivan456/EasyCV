@@ -18,6 +18,7 @@ MenuCV.prototype.initialization = function(){
 MenuCV.prototype.addButton = function(text, funcOnClick){
 	var button = document.createElement("input");
 	var place = document.getElementById(this.id);
+
 	button.value = text;
 	button.id = text;
 	button.type = "button";
@@ -94,7 +95,7 @@ MenuCV.prototype.hideMenu = function(){
 
 MenuCV.prototype.registration = function(){
 	var registrationForm = document.getElementById("registrationForm");
-	registrationForm.style.left = "50%";
+	registrationForm.className = "body__registration-form_active"
 };
 
 MenuCV.prototype.logIn = function(){

@@ -18,5 +18,17 @@
 
 	var newMenuCV = new MenuCV("menu", newTableCV);
 	newMenuCV.initialization();
-	
+
+	var newForm = document.createElement("form");
+	newForm.id = "registrationForm";
+	newForm.className = "body__registration-form_hide";
+	newForm.innerHTML = '<p class = "registration-form__title">Registration:</p>'+
+                        '<p>Name: '+
+                        '<input type="text" id="name" placeholder="Enter your full name" /></p>'+
+                   		'<p>Email:'+
+                   		'<input type="email" id="email" placeholder="Enter your email address" /></p>'+
+                    	'<p>Password:'+
+                    	'<input type="password" id="password"/></p><br>'+
+                    	'<input type="submit"  id="submit" value="Send message"/>';
+    document.body.appendChild(newForm);
 })();
