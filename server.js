@@ -48,50 +48,58 @@ http.createServer(function(req, res) {
 			});
 			
 
-			con.query('SELECT password FROM vodichcv WHERE mail = "' + body.email + '"', function(err, rows){
-				if(err){
-					console.log('Error connecting to Db');
-					return;
-				};
-				console.log(confirmPassword(body.password, rows[0].password));
-			});
+			con.query('SELECT password FROM vodichcv WHERE mail = "' +
+				body.email + '"', 
+				function(err, rows){
+					if(err){
+						console.log('Error connecting to Db');
+						return;
+					};
 
-			con.end(function(err) {});
-
-			function confirmPassword(formPassword, dbPassword) {
-				if(formPassword == dbPassword) {
-					return true;
-				} else {
-					return false;
-				};
-			};
+					if(rows.length > 0) {
+						if(confirmPassword(body.password, rows[0].password)) {
+							res.statusCode = 200;
+							res.end("success login");
+						}
+					} else {
+						con.query('INSERT INTO vodichcv VALUES ("' + 
+							body.name + '",' + '"' +
+							body.email + '",' + '"' +
+							body.password + '")', 
+							
+							function selectCb(err, results, fields) {
+						    	if (err) console.log('Error insert' + err);
+						    	res.statusCode = 200;
+								res.end("success registration");
+							}
+						);
+					};
+				con.end(function(err) {});
+				}
+			);
 		});
+	
 	} else {
-		console.log("......file name:	" + req.url);
-		var ext = path.extname(filename);
-		console.log("......extname = " + ext);
-		var localPath = __dirname;
-		console.log("......localPath = dirname = " + __dirname);
+		var ext = path.extname(filename),
+			localPath = __dirname,
+			validExtensions = {
+				".html": "text/html",			
+				".css": "text/css",
+				".json": "application/json",
+				".js": "application/javascript", 
+				".ttf": "font/ttf",
+				".txt": "text/plain",
+				".jpg": "image/jpeg",
+				".gif": "image/gif",
+				".png": "image/png",
+				".ico": "image/ico"
+			},
+			isValidExt = validExtensions[ext];
 
-		var validExtensions = {
-			".html": "text/html",			
-			".css": "text/css",
-			".json": "application/json",
-			".js": "application/javascript", 
-			".ttf": "font/ttf",
-			".txt": "text/plain",
-			".jpg": "image/jpeg",
-			".gif": "image/gif",
-			".png": "image/png",
-			".ico": "image/ico"
-		};
-		var isValidExt = validExtensions[ext];
-		console.log("......isValidExt = validExtensions[ext] = " + validExtensions[ext]);
 		if (isValidExt) {
 			localPath += filename;
 			fs.exists(localPath, function(exists) {
 				if(exists) {
-					console.log("Serving file: " + localPath);
 					getFile(localPath, res, validExtensions[ext]);
 				} else {
 					console.log("File not found: " + localPath);
@@ -109,9 +117,7 @@ function getFile(localPath, res, mimeType) {
 	fs.readFile(localPath, function(err, contents) {
 		if(!err) {
 			res.setHeader("Content-Length", contents.length);
-			console.log("Content-Length = " + contents.length);	
 			res.setHeader("Content-Type", mimeType);
-			console.log("Content-Type = " + mimeType);	
 			res.statusCode = 200;
 			res.end(contents);
 		} else {
@@ -121,4 +127,10 @@ function getFile(localPath, res, mimeType) {
 	});
 };
 
-
+function confirmPassword(formPassword, dbPassword) {
+	if(formPassword == dbPassword) {
+		return true;
+	} else {
+		return false;
+	};
+};

@@ -15,23 +15,26 @@
     	event.preventDefault();
 	});
 
-	document.getElementById("submit").onclick = function () {
+	document.getElementById("registrationSubmit").onclick = function () {
 		var httpRequest = new XMLHttpRequest(),
 			reqObject = {
-				name: document.getElementById("name").value,
-				email: document.getElementById("email").value,
-				password: document.getElementById("password").value
+				name: document.getElementById("registrationName").value,
+				email: document.getElementById("registrationEmail").value,
+				password: document.getElementById("registrationPassword").value
 			};
 
-		console.log("reqObject.name = " + reqObject.name);
     	httpRequest.onreadystatechange = function() {
     		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
     	   		alert(httpRequest.responseText);
     		} 
    		};
+   		
    		httpRequest.open('POST', 'http://127.0.0.1:8000/myaction', true);
 
-		httpRequest.send('{"name":"' + reqObject.name + '","email":"' + reqObject.email +'","password":"' + reqObject.password + '"}');
+		httpRequest.send('{"name":"' + reqObject.name + 
+						'","email":"' + reqObject.email +
+						'","password":"' + reqObject.password + 
+						'"}');
 
 		var registrationForm = document.getElementById("registrationForm");
 		registrationForm.className = "body__registration-form_hide";

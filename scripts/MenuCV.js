@@ -11,7 +11,8 @@ MenuCV.prototype.initialization = function(){
 	this.addButton("add", this.addField);
 	this.addButton("delete", this.deleteField);  
 	this.addButton("logIn", this.logIn);  
-	this.addButton("registration", this.registration);	
+	this.addButton("registration", this.registration);
+	this.createForm("registration");
 };
 
 
@@ -27,15 +28,14 @@ MenuCV.prototype.addButton = function(text, funcOnClick){
 };
 
 MenuCV.prototype.savePDF = function(){
-	var objForHtml2canvas = {
-		onrendered: function (canvas) {
-			var img = canvas.toDataURL("image/png");
-			var doc = new jsPDF();
-			doc.addImage(img, 'JPEG', 0, 0);
-			doc.save('test.pdf'); 
-		}
-	};
-	html2canvas(document.getElementById("CV"), objForHtml2canvas);
+	var pdf = new jsPDF('p', 'mm', [297, 210]);
+    
+    pdf.addHTML(document.getElementById("CV"),  function() {
+    	pdf.save('CV.pdf');
+    });
+
+
+
 };
 
 MenuCV.prototype.changeColor = function(){
@@ -108,4 +108,28 @@ MenuCV.prototype.logOut = function(){
 	var logInButton = document.getElementById("logIn");
 	logInButton.value = "logIn";
 	logInButton.onclick = MenuCV.prototype.logIn;
+};
+
+MenuCV.prototype.createForm = function(label){
+	var newForm = document.createElement("form");
+	newForm.id = label + 'Form';
+	newForm.className = 'body__' + label + '-form_hide';
+	newForm.innerHTML = '<p class = "' + label + '-form__title">' + 
+						label + ':</p>'+
+                        
+                        '<p>Name: '+
+                        '<input type="text" id="' + label + 
+                        'Name" placeholder="Enter your full name" /></p>'+
+                   		
+                   		'<p>Email:' +
+                   		'<input type="email" id="' + label + 
+                   		'Email" placeholder="Enter your email address" /></p>' +
+                    	
+                    	'<p>Password:'+
+                    	'<input type="password" id="' + label + 
+                    	'Password"/></p><br>'+
+                    	
+                    	'<input type="submit"  id="' + label + 
+                    	'Submit" value="Send message"/>';
+    document.body.appendChild(newForm);
 };

@@ -101,7 +101,7 @@ th {
 
 img {
 	margin-bottom: -20px;
-	margin-top: -1px;
+	margin-top: -3px;
 }
 
 .table__title-line {
@@ -138,9 +138,9 @@ tr:first-child {
 }
 
 .body__registration-form_active {
+	position: fixed;
 	display: block;
 	padding: 15px;
-	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
