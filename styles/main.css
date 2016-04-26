@@ -133,11 +133,11 @@ tr:first-child {
 }
 
 
-.body__registration-form_hide {
+.body__registration-form_hide, .body__login-form_hide {
 	display: none;
 }
 
-.body__registration-form_active {
+.body__registration-form_active, .body__login-form_active {
 	position: fixed;
 	display: block;
 	padding: 15px;

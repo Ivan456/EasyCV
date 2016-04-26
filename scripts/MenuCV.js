@@ -4,7 +4,7 @@ function MenuCV (id, newTableCV) {
 };
 
 MenuCV.prototype.initialization = function(){
-	this.addButton("save", this.savePDF);
+	this.addButton(".PDF", this.savePDF);
 	this.addButton("color", this.changeColor);
 	this.addButton("hide", this.hideMenu);
 	this.addButton("edit", this.editContent);
@@ -12,7 +12,6 @@ MenuCV.prototype.initialization = function(){
 	this.addButton("delete", this.deleteField);  
 	this.addButton("logIn", this.logIn);  
 	this.addButton("registration", this.registration);
-	this.createForm("registration");
 };
 
 
@@ -108,28 +107,4 @@ MenuCV.prototype.logOut = function(){
 	var logInButton = document.getElementById("logIn");
 	logInButton.value = "logIn";
 	logInButton.onclick = MenuCV.prototype.logIn;
-};
-
-MenuCV.prototype.createForm = function(label){
-	var newForm = document.createElement("form");
-	newForm.id = label + 'Form';
-	newForm.className = 'body__' + label + '-form_hide';
-	newForm.innerHTML = '<p class = "' + label + '-form__title">' + 
-						label + ':</p>'+
-                        
-                        '<p>Name: '+
-                        '<input type="text" id="' + label + 
-                        'Name" placeholder="Enter your full name" /></p>'+
-                   		
-                   		'<p>Email:' +
-                   		'<input type="email" id="' + label + 
-                   		'Email" placeholder="Enter your email address" /></p>' +
-                    	
-                    	'<p>Password:'+
-                    	'<input type="password" id="' + label + 
-                    	'Password"/></p><br>'+
-                    	
-                    	'<input type="submit"  id="' + label + 
-                    	'Submit" value="Send message"/>';
-    document.body.appendChild(newForm);
 };

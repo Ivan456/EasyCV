@@ -16,6 +16,9 @@
 	var newTableCV = new TableCV("CV", objExampleCV);
 	newTableCV.initialization();
 
+	var newFormCV = new FormCV("menu", newTableCV);
+	newFormCV.initialization();
+
 	var newMenuCV = new MenuCV("menu", newTableCV);
 	newMenuCV.initialization();
 
