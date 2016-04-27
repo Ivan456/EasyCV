@@ -157,7 +157,7 @@ tr:first-child {
 	border-radius: 10px;
 }
 
-.registration-form__title {
+.registration-form__title, .login-form__title {
 	margin: 0px;
 	text-align: center;
 	color: white;

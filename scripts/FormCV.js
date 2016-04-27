@@ -4,10 +4,16 @@ function FormCV(){
 FormCV.prototype.initialization = function(){
 	this.createForm("registration");
 	this.createForm("login");
+	
 	document.getElementById("registrationForm").addEventListener('submit', function (event) {
     	event.preventDefault();
 	});
 	document.getElementById("registrationSubmit").addEventListener('click', this.registrationRequest);
+
+	document.getElementById("loginForm").addEventListener('submit', function (event) {
+    	event.preventDefault();
+	});
+	document.getElementById("loginSubmit").addEventListener('click', this.loginRequest);
 };
 
 FormCV.prototype.createForm = function(label){
@@ -32,6 +38,11 @@ FormCV.prototype.createForm = function(label){
 
 FormCV.prototype.registrationRequest = function () {
 	FormCV.prototype.request('registration');	
+};
+
+
+FormCV.prototype.loginRequest = function () {
+	FormCV.prototype.request('login');	
 };
 
 FormCV.prototype.request = function (label) {

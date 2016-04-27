@@ -9,7 +9,7 @@ MenuCV.prototype.initialization = function(){
 	this.addButton("edit", this.editContent);
 	this.addButton("add", this.addField);
 	this.addButton("delete", this.deleteField);  
-	this.addButton("logIn", this.logIn);  
+	this.addButton("login", this.login);  
 	this.addButton("registration", this.registration);
 };
 
@@ -92,16 +92,17 @@ MenuCV.prototype.registration = function(){
 	registrationForm.className = "body__registration-form_active"
 };
 
-MenuCV.prototype.logIn = function(){
-	var logInButton = document.getElementById("logIn");
-	logInButton.value = "logOut";
-	logInButton.removeEventListener('click', MenuCV.prototype.logIn);
-	logInButton.addEventListener('click', MenuCV.prototype.logOut);
+MenuCV.prototype.login = function(){
+	var loginButton = document.getElementById("login");
+	loginButton.value = "logout";
+	loginButton.removeEventListener('click', MenuCV.prototype.login);
+	loginButton.addEventListener('click', MenuCV.prototype.logout);
+	loginForm.className = "body__login-form_active"
 };
 
-MenuCV.prototype.logOut = function(){
-	var logInButton = document.getElementById("logIn");
-	logInButton.value = "logIn";
-	logInButton.addEventListener('click', MenuCV.prototype.logIn);
-	logInButton.removeEventListener('click', MenuCV.prototype.logOut);
+MenuCV.prototype.logout = function(){
+	var loginButton = document.getElementById("login");
+	loginButton.value = "login";
+	loginButton.addEventListener('click', MenuCV.prototype.login);
+	loginButton.removeEventListener('click', MenuCV.prototype.logout);
 };
