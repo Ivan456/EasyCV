@@ -20,7 +20,7 @@ http.createServer(function(req, res) {
 	};
 
 	
-	if (req.url == "/myaction") {
+	if (req.url == "/registration") {
 		var body = '';
 		
 		req.on('data', function(chunk) {
@@ -48,7 +48,7 @@ http.createServer(function(req, res) {
 			});
 			
 
-			con.query('SELECT password FROM vodichcv WHERE mail = "' +
+			con.query('SELECT password FROM vodichCV WHERE email = "' +
 				body.email + '"', 
 				function(err, rows){
 					if(err){
@@ -62,8 +62,7 @@ http.createServer(function(req, res) {
 							res.end("success login");
 						}
 					} else {
-						con.query('INSERT INTO vodichcv VALUES ("' + 
-							body.name + '",' + '"' +
+						con.query('INSERT INTO vodichCV (email, password) VALUES ("' + 
 							body.email + '",' + '"' +
 							body.password + '")', 
 							

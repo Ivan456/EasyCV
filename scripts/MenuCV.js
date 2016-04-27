@@ -1,6 +1,5 @@
-function MenuCV (id, newTableCV) {
-	 this.id = id;
-	 this.newTableCV = newTableCV;
+function MenuCV (id, idTableCV) {
+	this.id = id;
 };
 
 MenuCV.prototype.initialization = function(){
@@ -22,7 +21,7 @@ MenuCV.prototype.addButton = function(text, funcOnClick){
 	button.value = text;
 	button.id = text;
 	button.type = "button";
-	button.onclick = funcOnClick;
+	button.addEventListener('click', funcOnClick);
 	place.appendChild(button);
 };
 
@@ -32,9 +31,6 @@ MenuCV.prototype.savePDF = function(){
     pdf.addHTML(document.getElementById("CV"),  function() {
     	pdf.save('CV.pdf');
     });
-
-
-
 };
 
 MenuCV.prototype.changeColor = function(){
@@ -53,7 +49,7 @@ MenuCV.prototype.editContent = function(){
 	};
 	var editButton = document.getElementById("edit");
 	editButton.value = "apply";
-	editButton.onclick = MenuCV.prototype.applyContent;
+	editButton.addEventListener('click', MenuCV.prototype.applyContent);
 };
 
 MenuCV.prototype.applyContent = function(){
@@ -64,13 +60,12 @@ MenuCV.prototype.applyContent = function(){
 	};
 	var editButton = document.getElementById("edit");
 	editButton.value = "edit";
-	editButton.onclick = MenuCV.prototype.editContent;
+	editButton.addEventListener('click', MenuCV.prototype.editContent);
 };
 
 MenuCV.prototype.addField = function(){
-    this.newTableCV.addTitleLine("general information","education");
-	this.newTableCV.addTitleLine("input text", "input text"); 
-	this.newTableCV.addInformationBlock("input text", "input text");
+	TableCV.prototype.addTitleLine("input text", "input text"); 
+	TableCV.prototype.addInformationBlock("input text", "input text");
 };
 
 MenuCV.prototype.deleteField = function(){
@@ -80,16 +75,16 @@ MenuCV.prototype.deleteField = function(){
 	document.getElementById("CV").removeChild(tdMassive[massiveLength - 2]);
 };
 
-MenuCV.prototype.showMenu = function(){
-	document.getElementById("menu").style.marginTop = "0px";
-	document.getElementById("CV").style.marginTop = "70px";
-	document.getElementById("CV").onclick = null;
-};
-
 MenuCV.prototype.hideMenu = function(){
 	document.getElementById("menu").style.marginTop = "-200px";
 	document.getElementById("CV").style.marginTop = "10px";
-	document.getElementById("CV").onclick = MenuCV.prototype.showMenu;
+	document.getElementById("CV").addEventListener('click', MenuCV.prototype.showMenu);
+};
+
+MenuCV.prototype.showMenu = function(){
+	document.getElementById("menu").style.marginTop = "0px";
+	document.getElementById("CV").style.marginTop = "70px";
+	document.getElementById("CV").removeEventListener('click', MenuCV.prototype.showMenu);
 };
 
 MenuCV.prototype.registration = function(){
@@ -100,11 +95,13 @@ MenuCV.prototype.registration = function(){
 MenuCV.prototype.logIn = function(){
 	var logInButton = document.getElementById("logIn");
 	logInButton.value = "logOut";
-	logInButton.onclick = MenuCV.prototype.logOut;
+	logInButton.removeEventListener('click', MenuCV.prototype.logIn);
+	logInButton.addEventListener('click', MenuCV.prototype.logOut);
 };
 
 MenuCV.prototype.logOut = function(){
 	var logInButton = document.getElementById("logIn");
 	logInButton.value = "logIn";
-	logInButton.onclick = MenuCV.prototype.logIn;
+	logInButton.addEventListener('click', MenuCV.prototype.logIn);
+	logInButton.removeEventListener('click', MenuCV.prototype.logOut);
 };

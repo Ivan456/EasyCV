@@ -16,10 +16,10 @@
 	var newTableCV = new TableCV("CV", objExampleCV);
 	newTableCV.initialization();
 
-	var newFormCV = new FormCV("menu", newTableCV);
+	var newFormCV = new FormCV();
 	newFormCV.initialization();
 
-	var newMenuCV = new MenuCV("menu", newTableCV);
+	var newMenuCV = new MenuCV("menu", newTableCV.id);
 	newMenuCV.initialization();
 
 })();
