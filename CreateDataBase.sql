@@ -1,7 +1,7 @@
 CREATE TABLE vodichCV (
-	 email varchar(255) NOT NULL,
-	 password varchar(255) NOT NULL,
-	 name varchar(255),
+	email varchar(255) NOT NULL,
+	password varchar(255) NOT NULL,
+	name varchar(255),
      photo varchar(255),
      generalInformation varchar(255),
      education varchar(255),

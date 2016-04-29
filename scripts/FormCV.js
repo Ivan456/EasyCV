@@ -46,24 +46,24 @@ FormCV.prototype.loginRequest = function () {
 };
 
 FormCV.prototype.request = function (label) {
-		var httpRequest = new XMLHttpRequest(),
-			reqObject = {
-				email: document.getElementById(label + "Email").value,
-				password: document.getElementById(label + "Password").value
-			};
+	var object = new MD5(),
+		httpRequest = new XMLHttpRequest(),
+		reqObject = {
+			email: document.getElementById(label + "Email").value,
+			password: object.digest(document.getElementById(label + "Password").value)
+		};
 
-    	httpRequest.onreadystatechange = function() {
-    		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-    	   		alert(httpRequest.responseText);
-    		} 
-   		};
-   		
-   		httpRequest.open('POST', 'http://127.0.0.1:8000/' + label, true);
+	httpRequest.onreadystatechange = function() {
+		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+	   		alert(httpRequest.responseText);
+			loadData();
+		}; 
+	};
+		
+	httpRequest.open('POST', 'http://127.0.0.1:8000/' + label, true);
 
-		httpRequest.send('{"email":"' + reqObject.email +
-					 '","password":"' + reqObject.password + 
-						'"}');
+	httpRequest.send(JSON.stringify(reqObject));
 
-		var registrationForm = document.getElementById(label + "Form");
-		registrationForm.className = "body__" + label + "-form_hide";
+	var registrationForm = document.getElementById(label + "Form");
+	registrationForm.className = "body__" + label + "-form_hide";
 };

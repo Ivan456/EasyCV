@@ -50,6 +50,7 @@ MenuCV.prototype.editContent = function(){
 	var editButton = document.getElementById("edit");
 	editButton.value = "apply";
 	editButton.addEventListener('click', MenuCV.prototype.applyContent);
+	editButton.removeEventListener('click', MenuCV.prototype.editContent)
 };
 
 MenuCV.prototype.applyContent = function(){
@@ -61,6 +62,8 @@ MenuCV.prototype.applyContent = function(){
 	var editButton = document.getElementById("edit");
 	editButton.value = "edit";
 	editButton.addEventListener('click', MenuCV.prototype.editContent);
+	editButton.removeEventListener('click', MenuCV.prototype.applyContent)
+	saveData();
 };
 
 MenuCV.prototype.addField = function(){
@@ -97,7 +100,7 @@ MenuCV.prototype.login = function(){
 	loginButton.value = "logout";
 	loginButton.removeEventListener('click', MenuCV.prototype.login);
 	loginButton.addEventListener('click', MenuCV.prototype.logout);
-	loginForm.className = "body__login-form_active"
+	loginForm.className = "body__login-form_active";
 };
 
 MenuCV.prototype.logout = function(){
