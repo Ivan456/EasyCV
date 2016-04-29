@@ -1,12 +1,19 @@
 function loadData(){
 	var httpRequest = new XMLHttpRequest(),
 		resObject,
-		reqObject = {email: document.getElementById('loginEmail').value};
+		reqObject = {
+			email: document.getElementById('loginEmail').value
+		};
 
 	httpRequest.onreadystatechange = function() {
 		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-	   		reqObject = JSON.parse(httpRequest.responseText);
-	   		console.log(httpRequest.responseText + reqObject);
+	   		resObject = JSON.parse(httpRequest.responseText);
+	   		delete resObject.password;
+	   		delete resObject.email;
+	   		console.log(httpRequest.responseText + resObject.name);
+	   		for (var prop in resObject) {
+	   			document.getElementById(prop).innerHTML = resObject[prop];
+			};
 		}; 
 	};
 		

@@ -37,12 +37,14 @@ FormCV.prototype.createForm = function(label){
 };
 
 FormCV.prototype.registrationRequest = function () {
-	FormCV.prototype.request('registration');	
+	FormCV.prototype.request('registration');
+	document.getElementById('loginEmail').value = document.getElementById('registrationEmail').value;	
 };
 
 
 FormCV.prototype.loginRequest = function () {
 	FormCV.prototype.request('login');	
+	loadData();
 };
 
 FormCV.prototype.request = function (label) {
@@ -56,7 +58,6 @@ FormCV.prototype.request = function (label) {
 	httpRequest.onreadystatechange = function() {
 		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
 	   		alert(httpRequest.responseText);
-			loadData();
 		}; 
 	};
 		

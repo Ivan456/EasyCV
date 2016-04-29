@@ -163,6 +163,7 @@ http.createServer(function(req, res) {
 				con.query('UPDATE vodichCV SET ' +
 						'name = "' + body.name +
 						'", photo = "' + body.photo +
+						'", generalInformation = "' + body.generalInformation +
 						'", education = "' + body.education +
 						'", wantedProfession = "' + body.wantedProfession +
 						'", expirience = "' + body.expirience +
