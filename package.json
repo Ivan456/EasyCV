@@ -5,12 +5,12 @@
     "express": "^4.10.6",
     "mysql": "^2.5.4"
   },
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "vodich",
   "license": "ISC",
-  "description": ""
+  "description": "fantastic cv builder"
 }

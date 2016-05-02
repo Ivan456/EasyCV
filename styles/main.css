@@ -8,17 +8,23 @@
   src: url(fonts/arbat.ttf);
 }
 
-body {
-	margin: 0;
-	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(178,201,225,1) 51%, rgba(225,234,244,1) 51%, rgba(240,247,255,1) 100%); 
-	text-align: center;
-	font-family: 'bodyFont';
-}
+
 
 * {
 	transition-property: all;
   	transition-duration: 0.5s;
  }
+
+
+
+body {
+	margin: 0;
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(178,201,225,1) 51%, rgba(225,234,244,1) 51%, rgba(240,247,255,1) 100%); 
+	text-align: center;
+	font-family: 'HELVETICA';
+}
+
+
 
 header {
 	display: inline-block;
@@ -35,7 +41,9 @@ header:hover {
 	font-size: 55px;
 }
 
-nav {
+
+
+.body__menu-nav_active {
 	width: 850px;
 	height:60px;
 	margin-top: 100px;
@@ -47,8 +55,21 @@ nav {
 	position: fixed;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+.body__menu-nav_hide {
+	width: 850px;
+	height: 60px;
 	
-} 
+	background-color: rgb(68,120,168);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 15px;
+	
+	position: fixed;
+    left: 150%;
+    transform: translate(-50%, 0);
+}
+
 
 input[type=button], input[type=submit] {
 	min-width: 70px;
@@ -77,8 +98,10 @@ input[type=button]:hover, input[type=submit]:hover {
 input[type=button]:active, input[type=submit]:active  { 
 	background: #267EC9; 
 } 
+ 
 
-table {
+
+.body__CV-table_active-menu {
 	display: inline-block;
 	width: 800px;
 	margin-top: 70px;
@@ -95,13 +118,21 @@ table {
 	border-radius: 10px;
 }
 
-th {
-	width: 400px;
-}
+.body__CV-table_hide-menu {
+	display: inline-block;
+	width: 800px;
+	margin-top: 10px;
 
-img {
-	margin-bottom: -20px;
-	margin-top: -3px;
+	background-color: rgb(244,244,232);
+	color: rgb(0,0,0);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+	border: 0px;
+	border-bottom: 5px;
+	border-top: 20px;
+	border-style: solid;
+	border-color: rgb(68,120,168);
+	border-radius: 10px;
 }
 
 .table__title-line {
@@ -127,10 +158,20 @@ img {
 	font-size: 16px;
 }
 
+th {
+	width: 400px;
+}
+
+img {
+	margin-bottom: -20px;
+	margin-top: -3px;
+}
+
 tr:first-child {
 	padding: 0px;
 	font-size: 35px;
 }
+
 
 
 .body__registration-form_hide, .body__login-form_hide {
@@ -166,6 +207,8 @@ tr:first-child {
 	text-shadow: 0 0 7px rgba(68,120,168,1);
 }
  
+
+
 footer {
 	color: white;
 }

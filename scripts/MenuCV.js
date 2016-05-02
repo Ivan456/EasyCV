@@ -3,6 +3,7 @@ function MenuCV (id, idTableCV) {
 };
 
 MenuCV.prototype.initialization = function(){
+	document.getElementById(this.id).className = "body__menu-nav_active";
 	this.addButton(".PDF", this.savePDF);
 	this.addButton("color", this.changeColor);
 	this.addButton("hide", this.hideMenu);
@@ -79,14 +80,14 @@ MenuCV.prototype.deleteField = function(){
 };
 
 MenuCV.prototype.hideMenu = function(){
-	document.getElementById("menu").style.marginTop = "-200px";
-	document.getElementById("CV").style.marginTop = "10px";
+	document.getElementById("menu").className = "body__menu-nav_hide";
+	document.getElementById("CV").className = "body__CV-table_hide-menu";
 	document.getElementById("CV").addEventListener('click', MenuCV.prototype.showMenu);
 };
 
 MenuCV.prototype.showMenu = function(){
-	document.getElementById("menu").style.marginTop = "0px";
-	document.getElementById("CV").style.marginTop = "70px";
+	document.getElementById("menu").className = "body__menu-nav_active";
+	document.getElementById("CV").className = "body__CV-table_active-menu";
 	document.getElementById("CV").removeEventListener('click', MenuCV.prototype.showMenu);
 };
 

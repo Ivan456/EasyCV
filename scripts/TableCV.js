@@ -22,6 +22,7 @@ TableCV.prototype.addTitleLine = function (firstName, secondName) {
 };
 
 TableCV.prototype.initialization = function(){
+	document.getElementById(this.id).className = "body__CV-table_active-menu";
 	this.addInformationBlock(this.objExampleCV.name, this.objExampleCV.photo, "name", "photo");
 	this.addTitleLine("general information","education");
 	this.addInformationBlock(this.objExampleCV.generalInformation, this.objExampleCV.education, "generalInformation", "education");
