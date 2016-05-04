@@ -158,7 +158,7 @@ var SampleApp = function() {
  */
 var zapp = new SampleApp();
 zapp.initialize();
-zapp.start();
 zapp.app.get('/', function (req, res) {
   res.send('Hello World!');
 });
+zapp.start();
