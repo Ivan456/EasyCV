@@ -170,8 +170,8 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "$OPENSHIFT_MYSQL_DB_HOST",
-					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					host: "127.10.210.130",
+					port: "3306",
 					user: "adminNlVjS8N",
 					password: "PgMPmBMQifAR",
 					database: "fantasticcv"
@@ -227,8 +227,8 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "$OPENSHIFT_MYSQL_DB_HOST",
-					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					host: "127.10.210.130",
+					port: "3306",
 					user: "adminNlVjS8N",
 					password: "PgMPmBMQifAR",
 					database: "fantasticcv"
@@ -281,8 +281,8 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "$OPENSHIFT_MYSQL_DB_HOST",
-					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					host: "127.10.210.130",
+					port: "3306",
 					user: "adminNlVjS8N",
 					password: "PgMPmBMQifAR",
 					database: "fantasticcv"
@@ -331,8 +331,8 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "$OPENSHIFT_MYSQL_DB_HOST",
-					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					host: "127.10.210.130",
+					port: "3306",
 					user: "adminNlVjS8N",
 					password: "PgMPmBMQifAR",
 					database: "fantasticcv"
