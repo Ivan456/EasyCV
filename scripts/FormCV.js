@@ -32,7 +32,7 @@ FormCV.prototype.createForm = function(label){
                     	'Password"/></p>'+
                     	
                     	'<input type="submit"  id="' + label + 
-                    	'Submit" value="Send message"/>';
+                    	'Submit" value="ok"/>';
     document.body.appendChild(newForm);
 };
 
