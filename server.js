@@ -159,6 +159,7 @@ var SampleApp = function() {
 var zapp = new SampleApp();
 zapp.initialize();
 zapp.app.get('/', function (req, res) {
-  res.send('Hello World!');
+	console.log('ajshdkjshd   vodich hello world');
+	res.send('Hello World!');
 });
 zapp.start();
