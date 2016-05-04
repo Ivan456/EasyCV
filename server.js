@@ -158,46 +158,6 @@ var SampleApp = function() {
  */
 var zapp = new SampleApp();
 zapp.initialize();
-zapp.app.get('/', function (req, res) {
-	var filename = req.url;
-	if (req.url == "/") {
-		console.log('.....change req.url to "/index.html"');
-		filename = "/index.html";
-	};
-
-			var ext = path.extname(filename),
-				localPath = __dirname,
-				validExtensions = {
-					".html": "text/html",			
-					".css": "text/css",
-					".json": "application/json",
-					".js": "application/javascript", 
-					".ttf": "font/ttf",
-					".txt": "text/plain",
-					".jpg": "image/jpeg",
-					".gif": "image/gif",
-					".png": "image/png",
-					".ico": "image/ico"
-				},
-				isValidExt = validExtensions[ext];
-
-			if (isValidExt) {
-				localPath += filename;
-				fs.exists(localPath, function(exists) {
-					if(exists) {
-						getFile(localPath, res, validExtensions[ext]);
-					} else {
-						console.log("File not found: " + localPath);
-						res.writeHead(404);
-						res.end();
-					};
-				});
-			} else {
-				console.log("Invalid file extension detected: " + ext);
-			};
-		
-	};
-});
 zapp.start();
 
 
