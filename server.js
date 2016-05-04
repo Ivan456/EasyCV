@@ -170,11 +170,11 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "127.0.0.1",
-					port: "3306",
-					user: "root",
-					password: "1010011010",
-					database: "vodichdb"
+					host: "$OPENSHIFT_MYSQL_DB_HOST",
+					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					user: "adminNlVjS8N",
+					password: "PgMPmBMQifAR",
+					database: "fantasticcv"
 				});
 
 				con.connect(function(err){
@@ -227,11 +227,11 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "127.0.0.1",
-					port: "3306",
-					user: "root",
-					password: "1010011010",
-					database: "vodichdb"
+					host: "$OPENSHIFT_MYSQL_DB_HOST",
+					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					user: "adminNlVjS8N",
+					password: "PgMPmBMQifAR",
+					database: "fantasticcv"
 				});
 
 				con.connect(function(err){
@@ -281,11 +281,11 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "127.0.0.1",
-					port: "3306",
-					user: "root",
-					password: "1010011010",
-					database: "vodichdb"
+					host: "$OPENSHIFT_MYSQL_DB_HOST",
+					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					user: "adminNlVjS8N",
+					password: "PgMPmBMQifAR",
+					database: "fantasticcv"
 				});
 
 				con.connect(function(err){
@@ -331,11 +331,11 @@ var SampleApp = function() {
 				res.writeHead(200, {'Content-Type': 'text/plain'});
 				
 				var con = mysql.createConnection({
-					host: "127.0.0.1",
-					port: "3306",
-					user: "root",
-					password: "1010011010",
-					database: "vodichdb"
+					host: "$OPENSHIFT_MYSQL_DB_HOST",
+					port: "$OPENSHIFT_MYSQL_DB_PORT",
+					user: "adminNlVjS8N",
+					password: "PgMPmBMQifAR",
+					database: "fantasticcv"
 				});
 
 				con.connect(function(err){
