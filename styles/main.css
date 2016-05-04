@@ -1,14 +1,3 @@
-@font-face {
-  font-family: headerFont;
-  src: url(fonts/Pacifico.ttf);
-}
-
-@font-face {
-  font-family: bodyFont;
-  src: url(fonts/arbat.ttf);
-}
-
-
 
 * {
 	transition-property: all;
