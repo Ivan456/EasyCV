@@ -142,27 +142,6 @@ var SampleApp = function() {
      */
 
 
-function getFile(localPath, res, mimeType) {
-	fs.readFile(localPath, function(err, contents) {
-		if(!err) {
-			res.setHeader("Content-Length", contents.length);
-			res.setHeader("Content-Type", mimeType);
-			res.statusCode = 200;
-			res.end(contents);
-		} else {
-			res.writeHead(500);
-			res.end();
-		};
-	});
-};
-
-function confirmPassword(formPassword, dbPassword) {
-	if(formPassword == dbPassword) {
-		return true;
-	} else {
-		return false;
-	};
-};
     self.start = function() {
         //  Start the app on the specific interface (and port).
         self.app.listen(self.port, self.ipaddress, function() {
@@ -170,7 +149,6 @@ function confirmPassword(formPassword, dbPassword) {
                         Date(Date.now() ), self.ipaddress, self.port);
         });
     };
-
 };   /*  Sample Application.  */
 
 
@@ -181,4 +159,6 @@ function confirmPassword(formPassword, dbPassword) {
 var zapp = new SampleApp();
 zapp.initialize();
 zapp.start();
-
+zapp.app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
