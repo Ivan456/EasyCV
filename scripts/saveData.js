@@ -20,7 +20,7 @@ function saveData(){
 		}; 
 	};
 		
-	httpRequest.open('POST', 'http://127.0.0.1:8000/saveData', true);
+	httpRequest.open('POST', '/saveData', true);
 
 	httpRequest.send(JSON.stringify(reqObject));
 };

@@ -32,7 +32,7 @@ FormCV.prototype.createForm = function(label){
                     	'Password"/></p>'+
                     	
                     	'<input type="submit"  id="' + label + 
-                    	'Submit" value="Send message"/>';
+                    	'Submit" value="ok"/>';
     document.body.appendChild(newForm);
 };
 
@@ -61,7 +61,7 @@ FormCV.prototype.request = function (label) {
 		}; 
 	};
 		
-	httpRequest.open('POST', 'http://127.0.0.1:8000/' + label, true);
+	httpRequest.open('POST', '/' + label, true);
 
 	httpRequest.send(JSON.stringify(reqObject));
 

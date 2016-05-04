@@ -34,18 +34,20 @@ header {
 	font-family: 'headerFont';
 	font-size: 50px;
 	text-shadow: 0 0 7px rgba(68,120,168,1);
+	user-select: none;
+	cursor:pointer;
 } 
 
 header:hover {
 	text-shadow: 0 7px 17px rgba(68,120,168,0.8);
-	font-size: 55px;
+	font-size: 65px;
 }
 
 
 
 .body__menu-nav_active {
 	width: 850px;
-	height:60px;
+	height:65px;
 	margin-top: 100px;
 	
 	background-color: rgb(68,120,168);
@@ -59,11 +61,11 @@ header:hover {
 
 .body__menu-nav_hide {
 	width: 850px;
-	height: 60px;
+	height: 65px;
 	
 	background-color: rgb(68,120,168);
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	border-radius: 15px;
+	border-radius: 20px;
 	
 	position: fixed;
     left: 150%;
@@ -73,11 +75,12 @@ header:hover {
 
 input[type=button], input[type=submit] {
 	min-width: 70px;
-	margin:10px;
-	padding: 7px; 
+	margin-top: 12px;
+	margin-left: 15px;
+	padding: 8px; 
 	background: none; 
 	
-	font-size: 15px;
+	font-size: 18px;
 	color: #fff; 
 	text-decoration: none; 
 	user-select: none;
@@ -141,7 +144,8 @@ input[type=button]:active, input[type=submit]:active  {
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	background-color: rgb(68,120,168);
 
-	font-size: 18px;
+	text-align: center;
+	font-size: 20px;
 	font-family: arial;
 	color: white;
 	
@@ -155,27 +159,61 @@ input[type=button]:active, input[type=submit]:active  {
 .table__information-block {
 	display: inline-block;
 	padding: 20px;
-	font-size: 16px;
+
+	text-align: left;
+	font-size: 18px;
 }
 
 th {
 	width: 400px;
+	padding-left: 30px;
+}
+
+#name, #photo {
+	text-align: center;
 }
 
 img {
-	margin-bottom: -20px;
+	margin-bottom: -10px;
 	margin-top: -3px;
+
+	user-select: none;
+	cursor:pointer;
+}
+
+img:hover {
+	opacity: 0.4;	
+}
+
+img:active {
+	opacity: 0.8;	
 }
 
 tr:first-child {
-	padding: 0px;
 	font-size: 35px;
+	padding: 0px;
 }
 
 
 
 .body__registration-form_hide, .body__login-form_hide {
-	display: none;
+	position: fixed;
+	display: block;
+	padding: 15px;
+	top: 150%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	box-shadow: 0 15px 40px rgba(0,10,20,0.6);
+	background: #729DE3;
+	text-align: right;
+	
+	border:0px;
+	border-bottom: 5px;
+	border-top: 5px;
+	border-style: solid;
+	border-color: rgb(68,120,168);
+	border-radius: 10px;
 }
 
 .body__registration-form_active, .body__login-form_active {

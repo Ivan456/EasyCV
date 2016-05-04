@@ -22,4 +22,11 @@
 	var newMenuCV = new MenuCV("menu", newTableCV.id);
 	newMenuCV.initialization();
 
+	var newLoadImage = new LoadImage('photo');
+	newLoadImage.initialization();
+
+	newMenuCV.on('addRow', function () {
+		newTableCV.callMethod();
+	});
+
 })();

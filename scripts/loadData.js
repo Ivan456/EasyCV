@@ -17,7 +17,7 @@ function loadData(){
 		}; 
 	};
 		
-	httpRequest.open('POST', 'http://127.0.0.1:8000/loadData', true);
+	httpRequest.open('POST', '/loadData', true);
 
 	httpRequest.send(JSON.stringify(reqObject));
 };

@@ -1,4 +1,4 @@
-function MenuCV (id, idTableCV) {
+function MenuCV (id) {
 	this.id = id;
 };
 
@@ -43,10 +43,10 @@ MenuCV.prototype.changeColor = function(){
 };
 	
 MenuCV.prototype.editContent = function(){
-	var thMassive = document.getElementsByTagName("th");
-	for (var i = 0; i < thMassive.length; i++) {
-		thMassive[i].contentEditable = true;
-		thMassive[i].style.border = "2px solid #0000FF";
+	var thArray = document.getElementsByTagName("th");
+	for (var i = 0; i < thArray.length; i++) {
+		thArray[i].contentEditable = true;
+		thArray[i].style.border = "2px solid #0000FF";
 	};
 	var editButton = document.getElementById("edit");
 	editButton.value = "apply";
@@ -55,10 +55,10 @@ MenuCV.prototype.editContent = function(){
 };
 
 MenuCV.prototype.applyContent = function(){
-	var thMassive = document.getElementsByTagName("th");
-	for (var i = 0; i < thMassive.length; i++) {
-		thMassive[i].contentEditable = false;
-		thMassive[i].style.border = "0px none #0000FF";
+	var thArray = document.getElementsByTagName("th");
+	for (var i = 0; i < thArray.length; i++) {
+		thArray[i].contentEditable = false;
+		thArray[i].style.border = "0px none #0000FF";
 	};
 	var editButton = document.getElementById("edit");
 	editButton.value = "edit";
@@ -68,15 +68,15 @@ MenuCV.prototype.applyContent = function(){
 };
 
 MenuCV.prototype.addField = function(){
-	TableCV.prototype.addTitleLine("input text", "input text"); 
-	TableCV.prototype.addInformationBlock("input text", "input text");
+	addRow.fire = function(){};
+	addRow.fire();
 };
 
 MenuCV.prototype.deleteField = function(){
-	var tdMassive = document.getElementsByTagName("tr");
-	var massiveLength = tdMassive.length;
-	document.getElementById("CV").removeChild(tdMassive[massiveLength - 1]);
-	document.getElementById("CV").removeChild(tdMassive[massiveLength - 2]);
+	var tdArray = document.getElementsByTagName("tr");
+	var arrayLength = tdArray.length;
+	document.getElementById("CV").removeChild(tdArray[arrayLength - 1]);
+	document.getElementById("CV").removeChild(tdArray[arrayLength - 2]);
 };
 
 MenuCV.prototype.hideMenu = function(){
@@ -93,7 +93,7 @@ MenuCV.prototype.showMenu = function(){
 
 MenuCV.prototype.registration = function(){
 	var registrationForm = document.getElementById("registrationForm");
-	registrationForm.className = "body__registration-form_active"
+	registrationForm.className = "body__registration-form_active";
 };
 
 MenuCV.prototype.login = function(){
