@@ -109,7 +109,7 @@ var SampleApp = function() {
 
         self.routes['/styles/main.css'] = function(req, res) {
             res.setHeader('Content-Type', 'text/css');
-            res.send(self.cache_get('/styles/main.css') );
+            res.send(self.cache_get('main.css') );
         };
 
     };
