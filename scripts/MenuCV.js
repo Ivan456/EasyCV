@@ -8,7 +8,7 @@ MenuCV.prototype.initialization = function(){
 	this.addButton("color", this.changeColor);
 	this.addButton("hide", this.hideMenu);
 	this.addButton("edit", this.editContent);
-	this.addButton("add", this.addField);
+	this.addButton("add", this.addRow);
 	this.addButton("delete", this.deleteField);  
 	this.addButton("login", this.login);  
 	this.addButton("registration", this.registration);
@@ -67,9 +67,9 @@ MenuCV.prototype.applyContent = function(){
 	saveData();
 };
 
-MenuCV.prototype.addField = function(){
-	addRow.fire = function(){};
-	addRow.fire();
+MenuCV.prototype.addRow = function(){
+	var eventAddRow = new Event('addRow');
+	document.dispatchEvent(eventAddRow);
 };
 
 MenuCV.prototype.deleteField = function(){
