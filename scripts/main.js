@@ -25,8 +25,9 @@
 	var newLoadImage = new LoadImage('photo');
 	newLoadImage.initialization();
 
-	newMenuCV.on('addRow', function () {
-		newTableCV.callMethod();
+	document.addEventListener('addRow', function () {
+		newTableCV.addTitleLine('new title 1', 'new title 2');
+		newTableCV.addInformationBlock('new information block 1', 'new information block 2');
 	});
 
 })();
