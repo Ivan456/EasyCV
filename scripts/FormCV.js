@@ -1,19 +1,32 @@
+
+
 function FormCV(){
 };
 
 FormCV.prototype.initialization = function(){
 	this.createForm("registration");
-	this.createForm("login");
 	
 	document.getElementById("registrationForm").addEventListener('submit', function (event) {
     	event.preventDefault();
 	});
 	document.getElementById("registrationSubmit").addEventListener('click', this.registrationRequest);
 
+	document.getElementById("registrationCancel").addEventListener('click', function () {
+		 hideForm('registration'); 
+	});
+		
+	
+	this.createForm("login");
+
 	document.getElementById("loginForm").addEventListener('submit', function (event) {
     	event.preventDefault();
 	});
+
 	document.getElementById("loginSubmit").addEventListener('click', this.loginRequest);
+
+	document.getElementById("loginCancel").addEventListener('click', function () {
+		 hideForm('login'); 
+	});
 };
 
 FormCV.prototype.createForm = function(label){
@@ -31,23 +44,27 @@ FormCV.prototype.createForm = function(label){
                     	'<input type="password" id="' + label + 
                     	'Password"/></p>'+
                     	
+                    	'<input type="button" id="' + label + 
+                    	'Cancel" value="Cancel"/>' +
+
                     	'<input type="submit"  id="' + label + 
                     	'Submit" value="ok"/>';
     document.body.appendChild(newForm);
 };
 
+
+
 FormCV.prototype.registrationRequest = function () {
-	FormCV.prototype.request('registration');
+	request('registration');
 	document.getElementById('loginEmail').value = document.getElementById('registrationEmail').value;	
 };
 
-
 FormCV.prototype.loginRequest = function () {
-	FormCV.prototype.request('login');	
+	request('login');	
 	loadData();
 };
 
-FormCV.prototype.request = function (label) {
+var request = function (label) { //////////GLOBAL VAR
 	var object = new MD5(),
 		httpRequest = new XMLHttpRequest(),
 		reqObject = {
@@ -65,6 +82,13 @@ FormCV.prototype.request = function (label) {
 
 	httpRequest.send(JSON.stringify(reqObject));
 
+	hideForm(label);
+};
+
+var hideForm = function (label) { ////////////global
 	var registrationForm = document.getElementById(label + "Form");
 	registrationForm.className = "body__" + label + "-form_hide";
 };
+
+ 
+
