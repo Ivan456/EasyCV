@@ -165,7 +165,7 @@ http.createServer(function(req, res) {
 						'", photo = "' + body.photo +
 						'", generalInformation = "' + body.generalInformation +
 						'", education = "' + body.education +
-						'", wantedProfession = "' + body.wantedProfession +
+						'", wantedProfession = "' + body.desiredPosition +
 						'", expirience = "' + body.expirience +
 						'", mainSkills = "' + body.mainSkills +
 						'", additionalSkills = "' + body.additionalSkills +

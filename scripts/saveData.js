@@ -6,7 +6,7 @@ function saveData(){
 		    photo: document.getElementById('photo').innerHTML,
 		    generalInformation: document.getElementById('generalInformation').innerHTML,
 		    education: document.getElementById('education').innerHTML,
-		    wantedProfession: document.getElementById('wantedProfession').innerHTML,
+		    desiredPosition: document.getElementById('desiredPosition').innerHTML,
 		    expirience: document.getElementById('expirience').innerHTML,
 		    mainSkills: document.getElementById('mainSkills').innerHTML,
 		    additionalSkills: document.getElementById('additionalSkills').innerHTML,
