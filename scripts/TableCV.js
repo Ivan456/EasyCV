@@ -26,8 +26,8 @@ TableCV.prototype.initialization = function(){
 	this.addInformationBlock(this.objExampleCV.name, this.objExampleCV.photo, "name", "photo");
 	this.addTitleLine("general information","education");
 	this.addInformationBlock(this.objExampleCV.generalInformation, this.objExampleCV.education, "generalInformation", "education");
-	this.addTitleLine("wanted profession","expirience");
-	this.addInformationBlock(this.objExampleCV.wantedProfession, this.objExampleCV.expirience, "wantedProfession", "expirience");
+	this.addTitleLine("desired position","expirience");
+	this.addInformationBlock(this.objExampleCV.desiredPosition, this.objExampleCV.expirience, "desiredPosition", "expirience");
 	this.addTitleLine("main skills","additional skills");
 	this.addInformationBlock(this.objExampleCV.mainSkills, this.objExampleCV.additionalSkills, "mainSkills", "additionalSkills");
 	this.addTitleLine("languages","about myself");
