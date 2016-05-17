@@ -1,0 +1,12 @@
+{
+     "name" : "Ivan Vodich <br> Front End Developer",
+     "photo" : "<img src = data/example.jpg >",
+     "generalInformation" : "age:    22 <br>  location:     Minsk, Oktiabrskaya 10 <br> phone:     8 029 800 63 28 <br> email:     Ivan.Vodich.l@gmail.com",
+     "education" : "BSU FPMI 4 course",
+     "desiredPosition" : "Front End Developer <br> JS Developer",
+     "expirience" : "1.5 years designer of BSU",
+     "mainSkills" : "JS(Ecma Script 5.0), HTML 5, CSS 3, <br> JQuery, Angular, MySQL, Adobe Photoshop",
+     "additionalSkills" : "Java SE,  C++",
+     "languages" : "English Intermediate", 
+     "aboutMyself" : "the desire to constantly evolve in front-end development, to participate in complex projects, working in a large team"
+}
