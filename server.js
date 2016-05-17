@@ -441,3 +441,5 @@ function confirmPassword(formPassword, dbPassword) {
 var zapp = new SampleApp();
 zapp.initialize();
 zapp.start();
+
+//this file have bad practice. i'll soon devide it on modules. 
