@@ -442,4 +442,4 @@ var zapp = new SampleApp();
 zapp.initialize();
 zapp.start();
 
-//this file have bad practice. i'll soon devide it on modules. 
+//this file have a bad practice. i'll soon devide it on modules. 
