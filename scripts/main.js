@@ -40,8 +40,10 @@
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
 
-	alert('Good day! Here you can create a resume in pdf format.' +
-	' Start with a ready example of editing.' +
-	' Sign up if you want to save the result to the server.');
+	window.onload =  function() {
+	   alert('Good day! Here you can create a resume in pdf format.' +
+	   ' Start with a ready example of editing.' +
+	   ' Sign up if you want to save the result to the server.');
+	};
 
 })();
