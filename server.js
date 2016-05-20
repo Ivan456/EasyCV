@@ -15,8 +15,8 @@ console.log("Starting web server at " + serverUrl + ":" + port);
 http.createServer(function(req, res) {
 	var filename = req.url;
 	if (req.url == "/") {
-		console.log('.....change req.url to "/index.html"');
-		filename = "/index.html";
+		console.log('.....change req.url to "/public/index.html"');
+		filename = "/public/index.html";
 	};
 
 	

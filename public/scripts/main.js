@@ -1,17 +1,17 @@
 (function () {
-	requirejs(["scripts/libs/jspdf.min.js"]);
-	requirejs(["scripts/libs/html2canvas.min.js"]);
-	requirejs(["scripts/libs/md5_obj.js"]);
-	requirejs(["scripts/TableCV.js"]);
-	requirejs(["scripts/loadData.js"]);
-	requirejs(["scripts/saveData.js"]);
-	requirejs(["scripts/MenuCV.js"]);
-	requirejs(["scripts/FormCV.js"]);
-	requirejs(["scripts/LoadImage.js"]);
-	requirejs(["scripts/events.js"]);
+	requirejs(["public/scripts/libs/jspdf.min.js"]);
+	requirejs(["public/scripts/libs/html2canvas.min.js"]);
+	requirejs(["public/scripts/libs/md5_obj.js"]);
+	requirejs(["public/scripts/TableCV.js"]);
+	requirejs(["public/scripts/loadData.js"]);
+	requirejs(["public/scripts/saveData.js"]);
+	requirejs(["public/scripts/MenuCV.js"]);
+	requirejs(["public/scripts/FormCV.js"]);
+	requirejs(["public/scripts/LoadImage.js"]);
+	requirejs(["public/scripts/events.js"]);
 
 	var xmlhttp = new XMLHttpRequest(),
-		url = "data/example.json",
+		url = "public/data/example.json",
 		objExampleCV = {};
 	
 	xmlhttp.onreadystatechange = function() {

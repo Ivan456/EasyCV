@@ -1,6 +1,6 @@
 {
      "name" : "Ivan Vodich <br> Front End Developer",
-     "photo" : "<img src = data/example.jpg >",
+     "photo" : "<img src = public/data/example.jpg >",
      "generalInformation" : "age:    22 <br>  location:     Minsk, Oktiabrskaya 10 <br> phone:     8 029 800 63 28 <br> email:     Ivan.Vodich.l@gmail.com",
      "education" : "BSU FPMI 4 course",
      "desiredPosition" : "Front End Developer <br> JS Developer",
