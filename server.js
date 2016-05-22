@@ -1,6 +1,3 @@
-// A very basic web server in node.js
-// Stolen from: Node.js for Front-End Developers by Garann Means (p. 9-10) 
-
 var port = 8000;
 var serverUrl = "127.0.0.1";
 
@@ -14,7 +11,6 @@ http.createServer(function(req, res) {
         fileName = "/public/index.html";
     };
 
-        
     switch(req.url) {
         case "/registration":
             require("./app/registration.js").registration(req, res);

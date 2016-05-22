@@ -6,7 +6,7 @@ exports.loadData = function (req, res) {
         body += chunk.toString('utf8');
     });
     req.on('end', function() {
-            body = JSON.parse(body);    
+        body = JSON.parse(body);    
 
         res.writeHead(200, {'Content-Type': 'text/plain'});
         

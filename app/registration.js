@@ -1,7 +1,7 @@
 exports.registration = function (req, res) {
     var mysql = require("mysql");
     var body = '';
-    
+        
     req.on('data', function(chunk) {
         body += chunk.toString('utf8');
     });
