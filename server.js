@@ -1,7 +1,8 @@
-var port = 8000;
-var serverUrl = "127.0.0.1";
+var port = 8000,
+    serverUrl = "127.0.0.1",
+    http = require("http"),
+    mysql = require("mysql");
 
-var http = require("http");
 console.log("Starting web server at " + serverUrl + ":" + port);
 
 http.createServer(function(req, res) {
@@ -11,27 +12,56 @@ http.createServer(function(req, res) {
         fileName = "/public/index.html";
     };
 
-    switch(req.url) {
-        case "/registration":
-            require("./app/registration.js").registration(req, res);
-            break;
-
-        case "/login":
-            require("./app/login.js").login(req, res);
-            break;
-
-        case "/saveData":
-            require("./app/saveData.js").saveData(req, res);
-            break;
-
-        case "/loadData":
-            require("./app/loadData.js").loadData(req, res);
-            break;
+    if (req.url === "/registration" || req.url === "/login" || req.url === "/saveData"  || req.url === "/loadData") {
+        var body = '';
             
-        default:
-            require("./app/getFile.js").getFile(req, res, fileName);
+        req.on('data', function(chunk) {
+            body += chunk.toString('utf8');
+        });
+        req.on('end', function() {
+            body = JSON.parse(body);    
+
+            res.writeHead(200, {'Content-Type': 'text/plain'});
+            
+            var con = mysql.createConnection({
+                host: "127.0.0.1",
+                port: "3306",
+                user: "root",
+                password: "1010011010",
+                database: "vodichdb"
+            });
+
+            con.connect(function(err){
+                if(err){
+                    console.log('Error connecting to Db' + err);
+                    return;
+                };
+                console.log('Connection established');
+            });
+
+            switch(req.url) {
+                case "/registration":
+                    require("./app/registration.js").registration(req, res, con, body);
+                    break;
+
+                case "/login":
+                    require("./app/login.js").login(req, res, con, body);
+                    break;
+
+                case "/saveData":
+                    require("./app/saveData.js").saveData(req, res, con, body);
+                    break;
+
+                case "/loadData":
+                    require("./app/loadData.js").loadData(req, res, con, body);
+                    break;
+            };
+               
+        });
+    } else {
+        require("./app/getFile.js").getFile(req, res, fileName);     
+    }    
         
-    };
 }).listen(port, serverUrl);
 
 
