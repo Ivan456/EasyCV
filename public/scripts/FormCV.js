@@ -74,7 +74,7 @@ var FormCV = (function() {
 			};
 
 		httpRequest.onreadystatechange = function() {
-			if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+			if (httpRequest.readyState === 4 && httpRequest.status === 200) {
 		   		alert(httpRequest.responseText);
 			}; 
 		};

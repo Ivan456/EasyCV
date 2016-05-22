@@ -6,7 +6,7 @@ function loadData(){
 		};
 
 	httpRequest.onreadystatechange = function() {
-		if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+		if (httpRequest.readyState === 4 && httpRequest.status === 200) {
 	   		resObject = JSON.parse(httpRequest.responseText);
 	   		delete resObject.password;
 	   		delete resObject.email;

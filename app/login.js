@@ -54,7 +54,7 @@ exports.login = function (req, res) {
 };
 
 function confirmPassword(formPassword, dbPassword) {
-	if(formPassword == dbPassword) {
+	if(formPassword === dbPassword) {
 		return true;
 	} else {
 		return false;
