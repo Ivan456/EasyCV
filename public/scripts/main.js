@@ -18,23 +18,23 @@
 	    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 	        objExampleCV = JSON.parse(xmlhttp.responseText);
 
-		var newTableCV = new TableCV("CV", objExampleCV);
-		newTableCV.initialization();
+			var newTableCV = new TableCV("CV", objExampleCV);
+			newTableCV.initialization();
 
-		var newFormCV = new FormCV();
-		newFormCV.initialization();
+			var newFormCV = new FormCV();
+			newFormCV.initialization();
 
-		var newMenuCV = new MenuCV("menu", newTableCV.id);
-		newMenuCV.initialization();
+			var newMenuCV = new MenuCV("menu", newTableCV.id);
+			newMenuCV.initialization();
 
-		var newLoadImage = new LoadImage('photo');
-		newLoadImage.initialization();
+			var newLoadImage = new LoadImage('photo');
+			newLoadImage.initialization();
 
-		document.addEventListener('addRow', function () {
-			newTableCV.addTitleLine('new title 1', 'new title 2');
-			newTableCV.addInformationBlock('new information block 1', 'new information block 2');
-		});
-	    
+			document.addEventListener('addRow', function () {
+				newTableCV.addTitleLine('new title 1', 'new title 2');
+				newTableCV.addInformationBlock('new information block 1', 'new information block 2');
+			});
+		    
 	    };
 	};
 	xmlhttp.open("GET", url, true);

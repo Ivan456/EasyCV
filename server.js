@@ -12,7 +12,7 @@ http.createServer(function(req, res) {
         fileName = "/public/index.html";
     };
 
-    if (req.url === "/registration" || req.url === "/login" || req.url === "/saveData"  || req.url === "/loadData") {
+    if (doNotGetFile(req.url)) {
         var body = '';
             
         req.on('data', function(chunk) {
@@ -64,4 +64,11 @@ http.createServer(function(req, res) {
         
 }).listen(port, serverUrl);
 
-
+function doNotGetFile(reqUrl) {
+    var doNotGetFile = false;
+    if (reqUrl === "/registration" ) doNotGetFile = true;
+    if (reqUrl === "/login" ) doNotGetFile = true;
+    if (reqUrl === "/saveData" ) doNotGetFile = true;
+    if (reqUrl === "/loadData" ) doNotGetFile = true;
+    return doNotGetFile;    
+};

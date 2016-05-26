@@ -7,7 +7,7 @@ gulp.task('default', ['watch']);
 
 // configure the jshint task
 gulp.task('jshint', function() {
-  return gulp.src('scripts/*.js')
+  return gulp.src('public/scripts/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });
